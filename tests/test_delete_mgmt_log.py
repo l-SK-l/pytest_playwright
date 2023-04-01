@@ -2,17 +2,7 @@ import pytest
 import re
 from playwright.sync_api import Page, expect
 # breakpoint()
-
-@pytest.fixture(scope="session")
-def browser_context_args(browser_context_args, playwright):
-    return {
-        **browser_context_args,
-        "ignore_https_errors": True,
-        "viewport": {
-            "width": 1366,
-            "height": 768,
-        }
-    }
+puth_screenshots = "test-results/screenshots/delete_mgmt_log/"
 
 
 def test_delete_mgmt_log(page: Page) -> None:
@@ -37,7 +27,7 @@ def test_delete_mgmt_log(page: Page) -> None:
     page.wait_for_timeout(500)
     page.locator("input[name=\"action\"]").fill("obama")
     page.locator("input[name=\"action\"]").press("Enter")
-    page.screenshot(path="screenshots/delete_mgmt_log/1_before_delete.png")
+    page.screenshot(path=f"{puth_screenshots}1_before_delete.png")
     # Deleting the log
     page.get_by_role("row", name="obama").get_by_role("button").click()
     page.locator("div:nth-child(11) > .tooltip-tooltip_inline > .toolbar-dropdown_wrapper > .base-dropdown-dropdown_dropdown > .base-dropdown-dropdown_dropdownToggle > .toolbar-dropdown_root > .toolbar-button_wrapper > .toolbar-button_root").click()
@@ -46,7 +36,7 @@ def test_delete_mgmt_log(page: Page) -> None:
     page.get_by_role("button", name="Proceed", exact=True).click()
     # Check that the log has been deleted
     expect(page.locator('//*[@id="root"]/div/div[2]/div[2]/div/div[3]/div/div/div/div/div/div/div/div[2]/div[1]/div/div[1]')).not_to_have_text("obama")
-    page.screenshot(path="screenshots/delete_mgmt_log/2_after_delete.png")
+    page.screenshot(path=f"{puth_screenshots}2_after_delete.png")
     # Log out of the website.
     page.locator("div:nth-child(8) > .toolbar-dropdown_wrapper > .base-dropdown-dropdown_dropdown > .base-dropdown-dropdown_dropdownToggle > .toolbar-dropdown_root > .toolbar-button_wrapper > .toolbar-button_root").click()
     page.get_by_role("button", name="Exit").get_by_role(

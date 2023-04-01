@@ -1,9 +1,7 @@
-# from playwright.sync_api import Page, expect
+from playwright.sync_api import Page, expect
+puth_screenshots = "test-results/screenshots/check_login_page/"
 
-
-# def test_example(page: Page) -> None:
-#     page.goto("https://mon-aes/")
-#     page.goto("https://mon-aes/dashboard")
-#     page.goto("https://mon-aes/login-page")
-#     page.get_by_role("button", name="Войти").click()
-#     page.get_by_text("Неверное имя пользователя или пароль").click()
+def test_check_login_page(page: Page) -> None:
+    page.goto("https://mon-aes/")
+    expect(page.locator('//*[@id="root"]/div/div/div[2]/button/div')).to_have_text("Войти")
+    page.screenshot(path=f"{puth_screenshots}1_login_page.png")

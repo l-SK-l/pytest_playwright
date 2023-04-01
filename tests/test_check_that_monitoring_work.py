@@ -1,21 +1,10 @@
 import pytest
 import re
 from playwright.sync_api import Page, expect
+puth_screenshots = "test-results/screenshots/check_that_monitoring_work/"
 
 
-@pytest.fixture(scope="session")
-def browser_context_args(browser_context_args, playwright):
-    return {
-        **browser_context_args,
-        "ignore_https_errors": True,
-        "viewport": {
-            "width": 1366,
-            "height": 768,
-        }
-    }
-
-
-def test_chack_that_monitoring_work(page: Page, ) -> None:
+def test_check_that_monitoring_work(page: Page, ) -> None:
     page.goto("https://mon-aes/login-page")
     # Login as admin
     page.get_by_role("button", name="Войти").click()
@@ -26,7 +15,7 @@ def test_chack_that_monitoring_work(page: Page, ) -> None:
     page.get_by_role("button", name="Войти").click()
     # Checking the version
     page.get_by_role("button", name="About").click()
-    page.screenshot(path="screenshots/chack_that_monitoring_work/version_logo.png")
+    page.screenshot(path=f"{puth_screenshots}version_logo.png")
     page.get_by_role("button", name="SC logo Dashboard and audit \"Continent 4\" Version 4.1.5.2475 Our contacts support@securitycode.ru Site www.securitycode.net © 1995-2022 Security Code").get_by_role("button",
         name="SC logo Dashboard and audit \"Continent 4\" Version 4.1.5.2475 Our contacts support@securitycode.ru Site www.securitycode.net © 1995-2022 Security Code", exact=True).filter(has_text="Dashboard and audit \"Continent 4\"Version4.1.5.2475Our contactssupport@securityco").locator("button").click()
     # Log out of the website.
