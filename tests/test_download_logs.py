@@ -8,7 +8,7 @@ def test_download_logs(page: Page) -> None:
     page.goto("https://mon-aes/login-page")
     # Login as admin
     page.locator("input[name=\"username\"]").fill("admin")
-    page.locator("input[name=\"password\"]").fill("Cont-4.X")
+    page.locator("input[name=\"password\"]").fill("Test123!")
     page.get_by_role("button", name="Войти").click()
     # Open logs
     page.get_by_role("button", name="Journals").click()
