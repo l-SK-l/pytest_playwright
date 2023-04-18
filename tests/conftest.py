@@ -1,6 +1,8 @@
 import pytest
 from playwright.sync_api import Playwright, Page, expect
 # page.pause()
+corrent_version = "4.1.5.2475"
+corrent_year = "2022"
 
 # @pytest.fixture(scope="function", autouse=True)
 # def before_each_after_each(page: Page):
