@@ -30,26 +30,6 @@ def browser_context_args(browser_context_args, playwright):
         }
     }
 
-class JornalsPage:
-    def __init__(self, page):
-        self.page = page
-        # self.search_term_input = page.locator('[aria-label="Enter your search term"]')
-
-    def login(self):
-        self.page.goto("https://mon-aes/login-page")
-    # Login as admin
-        self.page.get_by_role("button", name="Войти").click()
-        self.page.locator("input[name=\"username\"]").click()
-        self.page.locator("input[name=\"username\"]").fill("admin")
-        self.page.locator("input[name=\"password\"]").click()
-        self.page.locator("input[name=\"password\"]").fill("Test123!")
-        self.page.get_by_role("button", name="Войти").click()
-    # Open the management logs
-        self.page.get_by_text("MANAGEMENT:").click()
-        self.page.get_by_role("button", name="Journals").click()
-    # def search(self, text):
-    #     self.search_term_input.fill(text)
-    #     self.search_term_input.press("Enter")
 
 # @pytest.fixture(scope="function")
 # def authenticated_page(playwright: Playwright) -> Page:
