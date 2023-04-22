@@ -1,5 +1,5 @@
 from playwright.sync_api import Page, expect
-puth_screenshots = "test-results/screenshots/check_login_page/"
+
 
 class LoginPage:
 
@@ -22,5 +22,11 @@ class LoginPage:
         self.page.locator("input[name=\"password\"]").fill("Test123!")
         self.page.get_by_role("button", name="Войти").click()
 
-    def screenshot(self) -> None:
-        self.page.screenshot(path=f"{puth_screenshots}1_login_page.png")
+    def login_obama(self) -> None:
+        self.page.goto(self.URL)
+        self.page.locator("input[name=\"username\"]").click()
+        self.page.locator("input[name=\"username\"]").fill("obama")
+        self.page.locator("input[name=\"password\"]").click()
+        self.page.locator("input[name=\"password\"]").fill("Test123!")
+        self.page.get_by_role("button", name="Войти").click()
+        expect(self.page.locator('//*[@id="root"]/div/div/div[2]/div/div[2]/form/div/div[5]')).to_have_text("Неверное имя пользователя или пароль")

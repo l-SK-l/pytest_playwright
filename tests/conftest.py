@@ -1,23 +1,17 @@
 import pytest
 from playwright.sync_api import Playwright, Page, expect
+from pages.login_page import LoginPage
+from pages.dashboard import DashboardPage
+from pages.journals import JournalsPage
 # page.pause()
+
+# Variables
 corrent_version = "4.1.5.2475"
 corrent_year = "2022"
+screen_width_resolution = 1366
+screen_height_resolution = 768
 
-# @pytest.fixture(scope="function", autouse=True)
-# def before_each_after_each(page: Page):
-#     print("beforeEach")
-#     # Go to the starting url before each test.
-#     page.goto("https://playwright.dev/")
-#     yield
-#     print("afterEach")
 
-# @pytest.fixture(scope="session")
-# def browser_context_args(browser_context_args):
-#     return {
-#         **browser_context_args,
-#         "ignore_https_errors": True
-#     }
 
 @pytest.fixture(scope="session")
 def browser_context_args(browser_context_args, playwright):
@@ -25,26 +19,22 @@ def browser_context_args(browser_context_args, playwright):
         **browser_context_args,
         "ignore_https_errors": True,
         "viewport": {
-            "width": 1366,
-            "height": 768,
+            "width": screen_width_resolution,
+            "height": screen_height_resolution,
         }
     }
 
 
-# @pytest.fixture(scope="function")
-# def authenticated_page(playwright: Playwright) -> Page:
-#     with playwright.chromium.launch() as browser:
-#         with browser.new_context() as context:
-#             page = context.new_page()
-#             page.goto("https://mon-aes/login-page")
-#             # Read login and password from .auth file
-#             with open("tests/.auth") as f:
-#                 username, password = f.read().strip().split("\n")
-#             page.fill('input[name="username"]', username)
-#             page.fill('input[name="password"]', password)
-#             page.get_by_role("button", name="Войти").click()
-#             yield page
+@pytest.fixture
+def dashboard_page(page: Page) -> DashboardPage:
+    return DashboardPage(page)
 
-# def test_main_navigation(page: Page):
-#     # Assertions use the expect API.
-#     expect(page).to_have_url("https://playwright.dev/")
+
+@pytest.fixture
+def login_page(page: Page) -> LoginPage:
+    return LoginPage(page)
+
+
+@pytest.fixture
+def journals(page: Page) -> JournalsPage:
+    return JournalsPage(page)
