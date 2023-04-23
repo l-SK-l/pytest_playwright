@@ -21,6 +21,7 @@ class LoginPage:
         self.page.locator("input[name=\"password\"]").click()
         self.page.locator("input[name=\"password\"]").fill("Test123!")
         self.page.get_by_role("button", name="Войти").click()
+        self.page.wait_for_timeout(1000)
 
     def login_obama(self) -> None:
         self.page.goto(self.URL)
