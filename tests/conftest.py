@@ -25,11 +25,6 @@ def browser_context_args(browser_context_args, playwright):
     }
 
 
-# @pytest.fixture(scope='session')
-# def logs_file_path():
-#     return 'test-results/logs.csv'
-
-
 @pytest.fixture
 def dashboard_page(page: Page) -> DashboardPage:
     return DashboardPage(page)

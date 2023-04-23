@@ -77,6 +77,7 @@ coverage.xml
 .project
 .settings
 .vscode
+.vscode/
 __pycache__/
 tests/__pycache__/*
 

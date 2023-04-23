@@ -74,6 +74,8 @@ class JournalsPage:
         expect(self.page.locator(".content-block-content-block_root")).to_have_text(re.compile(rf"\b{word}\b", re.IGNORECASE))
 
     def word_is_not_on_page(self, word: str) -> None:
+        self.page.locator("#btnStatusRefresh").get_by_role("button")
+        self.page.wait_for_timeout(1000)
         expect(self.page.get_by_text(re.compile(rf"\b{word}\b", re.IGNORECASE))).not_to_be_visible()
 
     def export_csv_logs(self) -> None:

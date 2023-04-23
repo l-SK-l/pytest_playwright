@@ -19,22 +19,7 @@ def test_check_download_logs(
     journals.export_csv_logs()
     # Start waiting for the download
     journals.wait_and_confirm('test-results/logs.csv')
+    # Logout
+    journals.logout()
     # Check logs
     journals.validate_csv_log('test-results/logs.csv')
-
-
-# @pytest.fixture(scope='session')
-# def logs_file_path():
-#     return 'test-results/logs.csv'
-
-# def test_logs_file_contains_date(logs_file_path):
-#     with open(logs_file_path, newline='') as csvfile:
-#         reader = csv.reader(csvfile)
-#         for row in reader:
-#             for value in row:
-#                 try:
-#                     date = datetime.strptime(value, '%Y-%m-%d %H:%M:%S')
-#                     return
-#                 except ValueError:
-#                     pass
-#     pytest.fail('No date in yyyy-mm-dd hh:mm:ss format found in the logs file.')
