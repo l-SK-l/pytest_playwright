@@ -16,36 +16,36 @@ https://playwright.dev/python/docs/intro
 
 ## 🔧 Installation: 
 
-1. Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the requirements.
-
-2. Create and activate a virtual environment:
-```sh
-python3 -m venv venv
-source venv/bin/activate
-```
-2.1 For Windows:
-```sh
-.\.venv\Scripts\Activate.ps1
-```
-
-3. Install project dependencies: 
-```sh
-pip install -r requirements.txt
-```
-4. Install Playwright:
-```sh
-playwright install
-```
-
-## 🚀 Running:
-Follow these steps to install the necessary packages:
-
 1. Clone the repository:
 ```sh
 git clone https://github.com/ZhikharevAl/python-playwright-demo-project.git
 ```
 
-2. To run the example tests, more information [docs](https://playwright.dev/python/docs/running-tests):
+2. Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the requirements.
+
+3. Create and activate a virtual environment:
+```sh
+python3 -m venv venv
+source venv/bin/activate
+```
+3.1 For Windows:
+```sh
+.\.venv\Scripts\Activate.ps1
+```
+
+4. Install project dependencies: 
+```sh
+pip install -r requirements.txt
+```
+5. Install Playwright:
+```sh
+playwright install
+```
+
+## 🚀 Running:
+
+
+1. To run the example tests, more information [docs](https://playwright.dev/python/docs/running-tests):
 ```sh
 pytest .\tests\ sv --slowmo 800 --headed --screenshot only-on-failure --video on
 ```
