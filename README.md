@@ -18,7 +18,7 @@ https://playwright.dev/python/docs/intro
 
 1. Clone the repository:
 ```sh
-git clone https://github.com/ZhikharevAl/python-playwright-demo-project.git
+git clone https://github.com/l-SK-l/pytest_playwright.git
 ```
 
 2. Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the requirements.
