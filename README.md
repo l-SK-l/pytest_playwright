@@ -20,24 +20,28 @@ https://playwright.dev/python/docs/intro
 ```sh
 git clone https://github.com/l-SK-l/pytest_playwright.git
 ```
+1. Open directory:
+```sh
+cd pytest_playwright/
+```
 
-2. Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the requirements.
+1. Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the requirements.
 
-3. Create and activate a virtual environment:
+1. Create and activate a virtual environment:
 ```sh
 python3 -m venv venv
 source venv/bin/activate
 ```
-3.1 For Windows:
+ For Windows:
 ```sh
 .\.venv\Scripts\Activate.ps1
 ```
 
-4. Install project dependencies: 
+1. Install project dependencies: 
 ```sh
 pip install -r requirements.txt
 ```
-5. Install Playwright:
+1. Install Playwright:
 ```sh
 playwright install
 ```
