@@ -7,7 +7,8 @@ def test_check_login_page(
         page: Page,
         login_page: LoginPage) -> None:
     """
-    Check that the login page is available and displayed
+    Check that a user with an invalid password cannot login
     """
     login_page.load()
-    login_page.check_title()
+    # Аuthorization with an invalid password, under the user "Obama"
+    login_page.login_obama()

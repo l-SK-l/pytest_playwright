@@ -6,11 +6,10 @@ from pages.journals import JournalsPage
 # page.pause()
 
 # Variables
-corrent_version = "4.1.5.2475"
-corrent_year = "2022"
+current_version = "4.1.5.2475"
+current_year = "2022"
 screen_width_resolution = 1366
 screen_height_resolution = 768
-
 
 
 @pytest.fixture(scope="session")
@@ -23,6 +22,13 @@ def browser_context_args(browser_context_args, playwright):
             "height": screen_height_resolution,
         }
     }
+
+
+def pytest_addoption(parser):
+    parser.addoption("--screen_width", action="store",
+                     default=None, help="Screen width resolution")
+    parser.addoption("--screen_height", action="store",
+                     default=None, help="Screen height resolution")
 
 
 @pytest.fixture

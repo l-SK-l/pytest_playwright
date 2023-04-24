@@ -1,14 +1,13 @@
+import pytest
 from pages.login_page import LoginPage
 from pages.journals import JournalsPage
 from playwright.sync_api import Page
 
 
 def test_check_delete_mgmt_log(
-    page: Page,
-    login_page: LoginPage,
-    journals: JournalsPage) -> None:
-    # Аuthorization with an invalid password, under the user "Obama"
-    login_page.login_obama()
+        page: Page,
+        login_page: LoginPage,
+        journals: JournalsPage) -> None:
     # Login as Admin
     login_page.login_admin()
     # Open Management journals

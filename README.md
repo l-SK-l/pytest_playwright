@@ -45,13 +45,24 @@ pip install -r requirements.txt
 ```sh
 playwright install
 ```
+1. Install Playwright dependencies:
+```sh
+playwright install-deps
+```
 
 ## 🚀 Running:
 
 
 1. To run the example tests, more information [docs](https://playwright.dev/python/docs/running-tests):
+
+Windows
 ```sh
-pytest .\tests\ sv --slowmo 800 --headed --screenshot only-on-failure --video on
+pytest .\tests\ -sv --slowmo 800 --headed --screenshot only-on-failure --video on
+```
+
+Linux
+```sh
+pytest tests/ -sv --screenshot only-on-failure --video on
 ```
 
 ..... NOT READY!!!.....

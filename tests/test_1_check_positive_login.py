@@ -7,7 +7,10 @@ def test_check_login_page(
         page: Page,
         login_page: LoginPage) -> None:
     """
-    Check that the login page is available and displayed
+    Check that the administrator can login and logout
     """
     login_page.load()
-    login_page.check_title()
+    # Login as Admin
+    login_page.login_admin()
+    # Logout
+    login_page.logout()

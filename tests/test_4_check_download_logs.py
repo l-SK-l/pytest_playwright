@@ -1,12 +1,13 @@
+import pytest
 from pages.login_page import LoginPage
 from pages.journals import JournalsPage
 from playwright.sync_api import Page
 
 
 def test_check_download_logs(
-    page: Page,
-    login_page: LoginPage,
-    journals: JournalsPage) -> None:
+        page: Page,
+        login_page: LoginPage,
+        journals: JournalsPage) -> None:
     # Login as Admin
     login_page.login_admin()
     # Open System journals
