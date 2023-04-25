@@ -12,7 +12,7 @@ drivers/
 nohup.out
 .trace
 .tmp
-allure*
+allure-results/
 playwright-report
 /demo/
 /packages/*/LICENSE
