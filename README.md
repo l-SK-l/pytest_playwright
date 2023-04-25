@@ -2,6 +2,8 @@
 
 https://user-images.githubusercontent.com/65646599/233857975-6b84c02a-2a0d-404c-94aa-bba2a5c56a08.mov
 
+https://user-images.githubusercontent.com/65646599/234321091-5fc841fa-adfd-4958-ad50-36e60aedd0df.mov
+
 ## 📖 Documentation:
 
 https://playwright.dev/python/docs/intro
@@ -15,36 +17,38 @@ https://playwright.dev/python/docs/intro
 
 ## 🔧 Installation: 
 
-1. Clone the repository:
+ Clone the repository:
 ```sh
 git clone https://github.com/l-SK-l/pytest_playwright.git
 ```
-1. Open directory:
+ Open directory:
 ```sh
 cd pytest_playwright/
 ```
 
-1. Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the requirements.
+ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the requirements.
 
-1. Create and activate a virtual environment:
+ Create and activate a virtual environment:
 ```sh
 python3 -m venv venv
 source venv/bin/activate
 ```
+
     For Windows:
+
 ```sh
 .\.venv\Scripts\Activate.ps1
 ```
 
-1. Install project dependencies: 
+ Install project dependencies: 
 ```sh
 pip install -r requirements.txt
 ```
-1. Install Playwright:
+ Install Playwright:
 ```sh
 playwright install
 ```
-1. Install Playwright dependencies:
+ Install Playwright dependencies:
 ```sh
 playwright install-deps
 ```
@@ -53,22 +57,22 @@ playwright install-deps
 ## 🚀 Running:
 
 
-1. To run the example tests, more information [docs](https://playwright.dev/python/docs/running-tests):
+ To run the example tests, more information [docs](https://playwright.dev/python/docs/running-tests):
 
-1. Windows with Video
+ Windows with Video
 ```sh
 pytest .\tests\ -sv --slowmo 800 --headed --screenshot only-on-failure --video on
 ```
 
-1. Linux
+ Linux
 ```sh
 pytest tests/
 ```
-1.   With Video
+   With Video
 ```sh
 pytest tests/ -sv --screenshot only-on-failure --video on
 ```
-1.   With Allure
+   With Allure
 ```sh
 pytest tests/ -sv --screenshot only-on-failure --video on --alluredir=allure-results
 ```
@@ -76,12 +80,12 @@ pytest tests/ -sv --screenshot only-on-failure --video on --alluredir=allure-res
 
 ## 🐳 [Docker](https://www.docker.com/) with 📈[Allure](https://github.com/allure-framework):
 
-1. Check permissions or change
+ Check permissions or change
 ```sh
 chmod 777 *
 ```
 
-1. Run container
+ Run container
 ```sh
       docker run -p 5050:5050 -e CHECK_RESULTS_EVERY_SECONDS=3 -e KEEP_HISTORY=1 \
                  -v ${PWD}/allure-results:/app/allure-results \
@@ -89,7 +93,7 @@ chmod 777 *
                  frankescobar/allure-docker-service
 ```
 
-1. Open report:
+ Open report:
 ```sh
 http://IP:5050/allure-docker-service/projects/default/reports/1/index.html
 ```
