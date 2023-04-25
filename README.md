@@ -10,9 +10,8 @@ https://playwright.dev/python/docs/intro
 * To run this testing framework, you will need:
 
   * [Python](https://www.python.org/) 3.7 or higher
-  * [Docker](https://www.docker.com/) (if you want to run the tests in a container)
-  * [Docker-compose](https://docs.docker.com/compose/) (if you want to run the tests in a container)
-  * [Allure](https://github.com/allure-framework) (if you want to generate test reports)
+  * [Docker](https://www.docker.com/) (if you want to run the Allure in a container)
+  * [Docker-compose](https://docs.docker.com/compose/) (if you want to run the Allure in a container)
 
 ## 🔧 Installation: 
 
@@ -50,36 +49,39 @@ playwright install
 playwright install-deps
 ```
 
+
 ## 🚀 Running:
 
 
 1. To run the example tests, more information [docs](https://playwright.dev/python/docs/running-tests):
 
-Windows with Video
+1. Windows with Video
 ```sh
 pytest .\tests\ -sv --slowmo 800 --headed --screenshot only-on-failure --video on
 ```
 
-Linux
+1. Linux
 ```sh
 pytest tests/
 ```
-   With Video
+1.   With Video
 ```sh
 pytest tests/ -sv --screenshot only-on-failure --video on
 ```
-   With Allure
+1.   With Allure
 ```sh
 pytest tests/ -sv --screenshot only-on-failure --video on --alluredir=allure-results
 ```
 
-..... NOT READY!!!.....
-..... NOT READY!!!.....
-..... NOT READY!!!.....
-..... NOT READY!!!.....
-..... NOT READY!!!.....
 
 ## 🐳 [Docker](https://www.docker.com/) with 📈[Allure](https://github.com/allure-framework):
+
+1. Check permissions or change
+```sh
+chmod 777 *
+```
+
+1. Run container
 ```sh
       docker run -p 5050:5050 -e CHECK_RESULTS_EVERY_SECONDS=3 -e KEEP_HISTORY=1 \
                  -v ${PWD}/allure-results:/app/allure-results \
@@ -87,7 +89,7 @@ pytest tests/ -sv --screenshot only-on-failure --video on --alluredir=allure-res
                  frankescobar/allure-docker-service
 ```
 
-Open report:
+1. Open report:
 ```sh
 http://IP:5050/allure-docker-service/projects/default/reports/1/index.html
 ```
