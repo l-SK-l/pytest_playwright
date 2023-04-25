@@ -9,6 +9,9 @@ def test_check_info_page(
         page: Page,
         login_page: LoginPage,
         dashboard_page: DashboardPage) -> None:
+    """
+    Checking the operation of the information window with the version and dates
+    """
     # Login
     login_page.login_admin()
     # Checking the version

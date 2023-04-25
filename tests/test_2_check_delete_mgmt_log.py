@@ -8,6 +8,9 @@ def test_check_delete_mgmt_log(
         page: Page,
         login_page: LoginPage,
         journals: JournalsPage) -> None:
+    """
+    Checking the ability to search for and delete logs
+    """
     # Login as Admin
     login_page.login_admin()
     # Open Management journals

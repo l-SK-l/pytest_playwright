@@ -8,6 +8,9 @@ def test_check_download_logs(
         page: Page,
         login_page: LoginPage,
         journals: JournalsPage) -> None:
+    """
+    Check the ability to export logs in CSV format. Validating the CSV format
+    """
     # Login as Admin
     login_page.login_admin()
     # Open System journals

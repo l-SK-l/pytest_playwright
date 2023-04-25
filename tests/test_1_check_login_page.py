@@ -10,4 +10,5 @@ def test_check_login_page(
     Check that the login page is available and displayed
     """
     login_page.load()
+    # Checking for title availability
     login_page.check_title()
