@@ -32,7 +32,7 @@ cd pytest_playwright/
 python3 -m venv venv
 source venv/bin/activate
 ```
- For Windows:
+    For Windows:
 ```sh
 .\.venv\Scripts\Activate.ps1
 ```
@@ -64,11 +64,11 @@ Linux
 ```sh
 pytest tests/
 ```
-With Video
+   With Video
 ```sh
 pytest tests/ -sv --screenshot only-on-failure --video on
 ```
-With Allure
+   With Allure
 ```sh
 pytest tests/ -sv --screenshot only-on-failure --video on --alluredir=allure-results
 ```
@@ -79,28 +79,17 @@ pytest tests/ -sv --screenshot only-on-failure --video on --alluredir=allure-res
 ..... NOT READY!!!.....
 ..... NOT READY!!!.....
 
-## 🐳 [Docker](https://www.docker.com/):
->Docker is a platform for developing, delivering, and running applications in containers. In the context of testing, Docker can be used to run tests in isolated containers to ensure environment consistency and avoid conflicts between dependencies. In this example, if you want to run tests in a Docker container, you need to install Docker and Docker-compose. Then, to run tests in a container, use the following command:
+## 🐳 [Docker](https://www.docker.com/) with 📈[Allure](https://github.com/allure-framework):
 ```sh
-docker-compose up -d allure allure-ui
+      docker run -p 5050:5050 -e CHECK_RESULTS_EVERY_SECONDS=3 -e KEEP_HISTORY=1 \
+                 -v ${PWD}/allure-results:/app/allure-results \
+                 -v ${PWD}/allure-reports:/app/default-reports \
+                 frankescobar/allure-docker-service
 ```
 
-You can see the logs:
+Open report:
 ```sh
-docker-compose logs -f allure
-docker-compose logs -f allure-ui
+http://IP:5050/allure-docker-service/projects/default/reports/1/index.html
 ```
-## 📈 [Allure Framework](https://github.com/allure-framework):
->Allure is a framework and report generator that can be used to create beautiful and informative reports on test results. In this example, Allure is used to generate reports on test execution results. If you want to generate reports, you need to install Allure and run tests with the --alluredir parameter, as shown below:
-```sh
-pytest --clean-alluredir
-```
->After running tests, you can generate Allure reports using the command:
 
-```sh
-
-```
-Open Reports:
-```sh
-
-```
+More information abour [allure-docker-service-ui](https://github.com/fescobar/allure-docker-service-ui)
