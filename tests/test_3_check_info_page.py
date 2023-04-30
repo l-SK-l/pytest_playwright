@@ -16,7 +16,7 @@ def test_check_info_page(
     login_page.login_admin()
     # Checking the version
     dashboard_page.open_about()
-    dashboard_page.page.get_by_role("button", name=f"SC logo Dashboard and audit \"Continent 4\" Version {current_version} Our contacts support@securitycode.ru Site www.securitycode.net © 1995-2022 Security Code").get_by_role("button",
+    dashboard_page.page.get_by_role("button", name=f"SC logo Dashboard and audit \"Continent 4\" Version {current_version} Our contacts support@securitycode.ru Site www.securitycode.net © 1995-{current_year} Security Code").get_by_role("button",
         name=f"SC logo Dashboard and audit \"Continent 4\" Version {current_version} Our contacts support@securitycode.ru Site www.securitycode.net © 1995-{current_year} Security Code", exact=True).filter(has_text=f"Dashboard and audit \"Continent 4\"Version{current_version}Our contactssupport@securityco").locator("button").click()
     # Logout
     dashboard_page.logout()

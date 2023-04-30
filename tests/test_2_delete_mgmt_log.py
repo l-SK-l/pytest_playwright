@@ -4,13 +4,15 @@ from pages.journals import JournalsPage
 from playwright.sync_api import Page
 
 
-def test_check_delete_mgmt_log(
+def test_delete_mgmt_log(
         page: Page,
         login_page: LoginPage,
         journals: JournalsPage) -> None:
     """
     Checking the ability to search for and delete logs
     """
+    # Аuthorization with an invalid password, under the user "Obama"
+    login_page.login_obama()
     # Login as Admin
     login_page.login_admin()
     # Open Management journals
