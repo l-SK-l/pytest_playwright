@@ -7,23 +7,23 @@ from playwright.sync_api import Page
 def test_check_download_logs(
         page: Page,
         login_page: LoginPage,
-        journals: JournalsPage) -> None:
+        journals_page: JournalsPage) -> None:
     """
     Check the ability to export logs in CSV format. Validating the CSV format
     """
     # Login as Admin
     login_page.login_admin()
     # Open System journals
-    journals.load()
+    journals_page.load()
     # Open logs
-    journals.open_system_section()
+    journals_page.open_system_section()
     # Select all visible rows with logs
-    journals.select_all_visible_rows_system()
+    journals_page.select_all_visible_rows_system()
     # Export CSV Logs
-    journals.export_csv_logs()
+    journals_page.export_csv_logs()
     # Start waiting for the download
-    journals.wait_and_confirm('test-results/logs.csv')
+    journals_page.wait_and_confirm('test-results/logs.csv')
     # Logout
-    journals.logout()
+    journals_page.logout()
     # Check logs
-    journals.validate_csv_log('test-results/logs.csv')
+    journals_page.validate_csv_log('test-results/logs.csv')

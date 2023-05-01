@@ -5,7 +5,7 @@ from playwright.sync_api import Page, expect
 class LoginPage:
 
     URL = 'https://mon-aes/login-page'
-    
+
     def __init__(self, page: Page) -> None:
         self.page = page
 
@@ -31,7 +31,8 @@ class LoginPage:
         self.page.locator("input[name=\"password\"]").click()
         self.page.locator("input[name=\"password\"]").fill("Test123!")
         self.page.get_by_role("button", name="Войти").click()
-        expect(self.page.locator('//*[@id="root"]/div/div/div[2]/div/div[2]/form/div/div[5]')).to_have_text("Неверное имя пользователя или пароль")
+        expect(self.page.locator('//*[@id="root"]/div/div/div[2]/div/div[2]/form/div/div[5]')
+               ).to_have_text("Неверное имя пользователя или пароль")
 
     def logout(self) -> None:
         self.page.locator("div:nth-child(8) > .toolbar-dropdown_wrapper > .base-dropdown-dropdown_dropdown > .base-dropdown-dropdown_dropdownToggle > .toolbar-dropdown_root > .toolbar-button_wrapper > .toolbar-button_root").click()

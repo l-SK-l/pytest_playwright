@@ -5,6 +5,7 @@ from pages.dashboard import DashboardPage
 from pages.journals import JournalsPage
 from pages.statistics import StatisticsPage
 from pages.settings import SettingsPage
+from pages.navigation import NavigationPage
 # page.pause()
 
 # Variables
@@ -37,7 +38,7 @@ def login_page(page: Page) -> LoginPage:
 
 
 @pytest.fixture
-def journals(page: Page) -> JournalsPage:
+def journals_page(page: Page) -> JournalsPage:
     return JournalsPage(page)
 
 
@@ -49,3 +50,8 @@ def statistics_page(page: Page) -> StatisticsPage:
 @pytest.fixture
 def settings_page(page: Page) -> SettingsPage:
     return SettingsPage(page)
+
+
+@pytest.fixture
+def navigation_page(page: Page) -> NavigationPage:
+    return NavigationPage(page)

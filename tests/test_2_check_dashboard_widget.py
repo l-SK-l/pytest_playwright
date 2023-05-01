@@ -16,16 +16,16 @@ def test_check_dashboard_widget(
     # Open Main dashboard page
     dashboard_page.load()
     # Check Access server widget
-    dashboard_page.chech_widget_access_server_available()
+    dashboard_page.check_widget_access_server_available()
     dashboard_page.check_widget_access_server_has_0_connections()
     dashboard_page.open_widget_access_server()
     dashboard_page.check_widget_access_server_has_0_connections_inside()
     # Check VPN widget
-    dashboard_page.chech_widget_vpn_available()
+    dashboard_page.check_widget_vpn_available()
     # Check Network ifaces widget
-    dashboard_page.chech_widget_Network_ifaces_available()
+    dashboard_page.check_widget_Network_ifaces_available()
     # Chect Network security widget
-    dashboard_page.chech_widget_Network_security_available()
+    dashboard_page.check_widget_Network_security_available()
     # Create events + check
     # Logout
     dashboard_page.logout()
