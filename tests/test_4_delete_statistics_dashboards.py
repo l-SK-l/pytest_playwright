@@ -4,7 +4,6 @@ from pages.statistics import StatisticsPage
 from playwright.sync_api import Page
 
 
-# @pytest.mark.skip('Not Ready')
 def test_detele_statistics_dashboards(
         page: Page,
         login_page: LoginPage,

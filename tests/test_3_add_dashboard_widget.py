@@ -4,7 +4,7 @@ from pages.dashboard import DashboardPage
 from playwright.sync_api import Page
 
 
-@pytest.mark.skip('Unstable Date')
+@pytest.mark.skip('Unstable Data')
 def test_dashboard_widget(
         page: Page,
         login_page: LoginPage,

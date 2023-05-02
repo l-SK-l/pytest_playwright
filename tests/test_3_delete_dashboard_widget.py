@@ -4,6 +4,7 @@ from pages.dashboard import DashboardPage
 from playwright.sync_api import Page
 
 
+@pytest.mark.skip('Dashboard not add in test_3_add_dashboard_widget')
 def test_delete_dashboard_widget(
         page: Page,
         login_page: LoginPage,

@@ -1,8 +1,8 @@
 # 🎭Automate Web monitoring firewall with [Python](https://www.python.org/) and [Playwright](https://playwright.dev/python/).
 
-https://user-images.githubusercontent.com/65646599/233857975-6b84c02a-2a0d-404c-94aa-bba2a5c56a08.mov
+https://user-images.githubusercontent.com/65646599/235766796-a151e678-2abd-4d3d-99e2-84c1eab6a636.mov
 
-https://user-images.githubusercontent.com/65646599/234321091-5fc841fa-adfd-4958-ad50-36e60aedd0df.mov
+https://user-images.githubusercontent.com/65646599/235766275-25b07996-cf64-4630-a00a-09915acb6b5a.mov
 
 ## 📖 Documentation:
 
@@ -80,6 +80,11 @@ pytest tests/ -sv --screenshot only-on-failure --video on --alluredir=allure-res
 
 ## 🐳 [Docker](https://www.docker.com/) with 📈[Allure](https://github.com/allure-framework):
 
+* Check permissions or change
+```sh
+deactivate
+```
+
  Check permissions or change
 ```sh
 chmod 777 *
@@ -95,7 +100,8 @@ chmod 777 *
 
  Open report:
 ```sh
-http://IP:5050/allure-docker-service/projects/default/reports/1/index.html
+http://IP:5050/allure-docker-service/emailable-report/render?project_id=default
+http://IP:5050/allure-docker-service/projects/default/reports/latest/index.html
 ```
 
 More information abour [allure-docker-service-ui](https://github.com/fescobar/allure-docker-service-ui)

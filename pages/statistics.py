@@ -14,6 +14,7 @@ class StatisticsPage:
         self.page.goto(self.URL)
 
     def check_widget_top15_available(self) -> None:
+        self.page.wait_for_timeout(3000)
         self.page.get_by_text("Top 15 faulty nodes")
 
     def check_empty_widget(self) -> None:
@@ -25,6 +26,7 @@ class StatisticsPage:
         self.page.get_by_role("button", name="Apply", exact=True).click()
 
     def duplicate_dashboard(self) -> None:
+        self.page.wait_for_timeout(3000)
         self.page.get_by_role("button", name="Duplicate").click()
         self.page.get_by_placeholder("Widgets set name").click()
         self.page.get_by_placeholder(
@@ -48,7 +50,7 @@ class StatisticsPage:
 
     def delete_duplicate_dashboard(self) -> None:
         self.page.get_by_role("button", name="duplicate_dashboard",
-                              exact=True).get_by_role("button").nth(1).click()
+            exact=True).get_by_role("button").nth(1).click()
         self.page.get_by_role("button", name="Proceed", exact=True).click()
 
     def word_is_not_on_page(self, word: str) -> None:

@@ -1,0 +1,40 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Tue May 02 19:10:52 UTC 2023","Tue May 02 19:11:08 UTC 2023","15478","tests","test_4_check_download_logs","","","","test_check_download_logs[chromium]","
+    Check the ability to export logs in CSV format. Validating the CSV format
+    "
+"passed","Tue May 02 19:09:45 UTC 2023","Tue May 02 19:10:04 UTC 2023","19007","tests","test_2_delete_mgmt_log","","","","test_delete_mgmt_log[chromium]","
+    Checking the ability to search for and delete logs
+    "
+"passed","Tue May 02 19:08:57 UTC 2023","Tue May 02 19:09:15 UTC 2023","18684","tests","test_2_check_settings_page","","","","test_check_statistics_page[chromium]","
+    Checking the Settings page: SMTP and WhoIs
+    "
+"passed","Tue May 02 19:10:04 UTC 2023","Tue May 02 19:10:10 UTC 2023","5422","tests","test_3_check_info_page","","","","test_check_info_page[chromium]","
+    Checking the operation of the information window with the version and dates
+    "
+"passed","Tue May 02 19:09:17 UTC 2023","Tue May 02 19:09:34 UTC 2023","17203","tests","test_2_check_statistics_page","","","","test_check_statistics_page[chromium]","
+    Checking the Statistics page
+    "
+"passed","Tue May 02 19:08:25 UTC 2023","Tue May 02 19:08:38 UTC 2023","13157","tests","test_1_positive_login","","","","test_positive_login[chromium]","
+    Check that the administrator can login and logout
+    "
+"passed","Tue May 02 19:08:39 UTC 2023","Tue May 02 19:08:56 UTC 2023","16663","tests","test_2_check_dashboard_widget","","","","test_check_dashboard_widget[chromium]","
+    Checking that the default widgets are displayed and working
+    "
+"passed","Tue May 02 19:09:35 UTC 2023","Tue May 02 19:09:45 UTC 2023","10131","tests","test_2_check_structure_node_information","","","","test_check_structure_node_information[chromium]","
+    Checking the navigation page with nodes and data availability from a node
+    "
+"broken","Tue May 02 19:10:10 UTC 2023","Tue May 02 19:10:48 UTC 2023","38293","tests","test_3_delete_dashboard_widget","","","","test_delete_dashboard_widget[chromium]","
+    Check if the widget can be deleted
+    "
+"passed","Tue May 02 19:11:08 UTC 2023","Tue May 02 19:11:15 UTC 2023","6750","tests","test_4_delete_statistics_dashboards","","","","test_detele_statistics_dashboards[chromium]","
+    Checking the removal of dashboards to the Statistics page
+    "
+"passed","Tue May 02 19:08:11 UTC 2023","Tue May 02 19:08:15 UTC 2023","3518","tests","test_1_check_login_page","","","","test_check_login_page[chromium]","
+    Check that the login page is available and displayed
+    "
+"passed","Tue May 02 19:08:15 UTC 2023","Tue May 02 19:08:24 UTC 2023","8614","tests","test_1_negative_login","","","","test_negative_login[chromium]","
+    Check that a user with an invalid password cannot login
+    "
+"skipped","Tue May 02 19:10:04 UTC 2023","Tue May 02 19:10:04 UTC 2023","0","tests","test_3_add_dashboard_widget","","","","test_dashboard_widget[chromium]","
+    Check that you can create a new widget on the main page and on an additional page
+    "
