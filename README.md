@@ -80,7 +80,7 @@ pytest tests/ -sv --screenshot only-on-failure --video on --alluredir=allure-res
 
 ## 🐳 [Docker](https://www.docker.com/) with 📈[Allure](https://github.com/allure-framework):
 
-* Check permissions or change
+*These actions should be done after exiting VENV*
 ```sh
 deactivate
 ```
