@@ -9,12 +9,37 @@ from pages.navigation import NavigationPage
 # page.pause()
 
 # Variables
-current_version = "4.1.7.1325"
-current_year = "2023"
 screen_width_resolution = 1366
 screen_height_resolution = 768
 
 
+# Additional parameters
+def pytest_addoption(parser):
+    parser.addoption(
+        "--fw_year",
+        action="store",
+        default="2023",
+        help="Current year in web monitoring"
+    )
+    parser.addoption(
+        "--fw_version",
+        action="store",
+        default="4.1.7.1325",
+        help="Current version firewall"
+    )
+
+
+@pytest.fixture
+def current_year(request):
+    return request.config.getoption("--fw_year")
+
+
+@pytest.fixture
+def current_version(request):
+    return request.config.getoption("--fw_version")
+
+
+# Screen resolution, transmitted to all tests
 @pytest.fixture(scope="session")
 def browser_context_args(browser_context_args, playwright):
     return {
