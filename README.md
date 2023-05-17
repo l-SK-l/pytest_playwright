@@ -76,11 +76,11 @@ pytest tests/
 ```
    With Video
 ```sh
-pytest tests/ -sv --screenshot only-on-failure --video on
+pytest tests/ -sv --screenshot only-on-failure --video on --fw_year=2023
 ```
    With Allure
 ```sh
-pytest tests/ -sv --screenshot only-on-failure --video on --alluredir=allure-results
+pytest tests/ -sv --screenshot only-on-failure --video on --fw_year=2023 --alluredir=allure-results
 ```
 
 
