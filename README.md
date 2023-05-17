@@ -59,6 +59,12 @@ playwright install-deps
 
  To run the example tests, more information [docs](https://playwright.dev/python/docs/running-tests):
 
+Parameters
+```sh
+--fw_year  #Current year in web monitoring
+--fw_version  #Current version firewall
+```
+
  Windows with Video
 ```sh
 pytest .\tests\ -sv --slowmo 800 --headed --screenshot only-on-failure --video on
